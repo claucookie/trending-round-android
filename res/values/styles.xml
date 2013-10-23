@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.Trendinground" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarItemBackground">@drawable/selectable_background_trendinground</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Trendinground</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Trendinground</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Trendinground</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Trendinground</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Trendinground</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_trendinground</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_trendinground</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Trendinground</item>
+
+        <!-- Light.DarkActionBar specific -->
+        <item name="actionBarWidgetTheme">@style/Theme.Trendinground.Widget</item>
+        
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/ActionBar.Solid.Trendinground</item>
+
+    </style>
+
+    <style name="ActionBar.Solid.Trendinground" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@drawable/ab_solid_trendinground</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_trendinground</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_trendinground</item>
+        <item name="progressBarStyle">@style/ProgressBar.Trendinground</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Trendinground" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@drawable/ab_transparent_trendinground</item>
+        <item name="progressBarStyle">@style/ProgressBar.Trendinground</item>
+    </style>
+	
+    <style name="PopupMenu.Trendinground" parent="@style/Widget.AppCompat.PopupMenu">	
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_trendinground</item>	
+    </style>
+	
+    <style name="DropDownListView.Trendinground" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_trendinground</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Trendinground" parent="@style/Widget.AppCompat.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_trendinground</item>
+    </style>
+	
+    <style name="DropDownNav.Trendinground" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/spinner_background_ab_trendinground</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_trendinground</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_trendinground</item>
+    </style>
+    
+    <style name="ProgressBar.Trendinground" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_trendinground</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Trendinground" parent="@style/Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_trendinground</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Trendinground.Widget" parent="@style/Theme.AppCompat">
+        <item name="popupMenuStyle">@style/PopupMenu.Trendinground</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Trendinground</item>
+    </style>
+    
+    
+    
+    <!-- Posts List Styles -->
+
+    <style name="PostsListRowText1">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@drawable/tr_palette2</item>
+        <item name="android:textSize">@dimen/tr_list_title2</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PostsListRowText2">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@drawable/tr_palette2</item>
+        <item name="android:textSize">@dimen/tr_list_title3</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <!-- <item name="android:background">@drawable/posts_list_row_shape</item>  -->
+    </style>
+
+    <style name="PostsListRowImage">
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:src">@drawable/trendinground_stub4</item>
+    </style>
+
+    <style name="PostsListRowDate">
+        <item name="android:textColor">@drawable/tr_palette2</item>
+        <item name="android:textSize">@dimen/tr_list_title3</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">start</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <!-- Menu list style -->
+
+    <style name="MenuList">
+        <item name="android:background">@drawable/tr_palette4</item>
+    </style>
+
+    <style name="MenuListTitle">
+        <item name="android:background">@drawable/tr_palette1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="MenuListRowText">
+        <item name="android:textSize">@dimen/tr_list_title1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- Post detail styles -->
+    <style name="PostDetail">
+    </style>
+
+    <style name="PostDetailTitle">
+        <item name="android:textSize">@dimen/tr_header_title1</item>
+        <item name="android:textColor">@drawable/tr_palette2</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="PostDetailDate">
+        <item name="android:textSize">@dimen/tr_header_title2</item>
+        <item name="android:textColor">@drawable/tr_palette2</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:drawableLeft">@drawable/calendar</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+
+    <style name="PostDetailContent">
+        <item name="android:textSize">@dimen/tr_content_title1</item>
+        <item name="android:textColor">@drawable/tr_palette5</item>
+    </style>
+
+
+    <!-- Settings style -->
+
+    <style name="SettingsTitle">
+        <item name="android:textSize">@dimen/tr_header_title1</item>
+        <item name="android:textColor">@drawable/tr_palette5</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SettingsSubtitle">
+        <item name="android:textSize">@dimen/tr_header_title2</item>
+        <item name="android:textColor">@drawable/tr_palette1</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>

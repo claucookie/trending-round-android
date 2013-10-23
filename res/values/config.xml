@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="bugsense_api_key">c169a98b</string>
+    
+    <string name="facebook_url">https://www.facebook.com/Trendinground</string>
+    <string name="instagram_url">http://instagram.com/trending_round</string>
+    <string name="twitter_url">https://twitter.com/trending_round</string>
+    <string name="blogger_url">http://trendinground.blogspot.com.es/#6da17c</string>
+    
+    <string name="contact_email_sender">patricialufer86@gmail.com</string>
+    
+    
+</resources>

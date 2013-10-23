@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tr_palette4"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/fs_social"
+                style="@style/SettingsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tr_list_row_height2"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/settings__title" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/tr_palette5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/fs_googleplus_desc"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/settings_googleplus_description" />
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0" />
+
+                <TextView
+                    android:id="@+id/fs_googleplus_connected"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="0"
+                    android:background="@android:drawable/list_selector_background"
+                    android:clickable="true"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/tick_connected"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:maxWidth="200dp"
+                    android:padding="5dp"
+                    android:text="@string/settings_googleplus_status_connected"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/tr_palette5_semitrans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/fs_follow"
+                style="@style/SettingsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tr_list_row_height2"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/settings_follow_section" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/tr_palette5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/fs_facebook_follow_desc"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/list_selector_background"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/settings_facebook_follow" />
+
+                <ImageView
+                    android:id="@+id/fs_facebook_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/facebook_icon" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/tr_palette5_semitrans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/fs_twitter_follow_desc"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/list_selector_background"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/settings_twitter_follow" />
+
+                <ImageView
+                    android:id="@+id/fs_twitter_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/twitter_icon" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/tr_palette5_semitrans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/fs_instagram_follow_desc"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/list_selector_background"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/settings_instagram_follow" />
+
+                <ImageView
+                    android:id="@+id/fs_instagram_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/instagram_icon" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/tr_palette5_semitrans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/fs_blogger_follow_desc"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/list_selector_background"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/settings_blogger_follow" />
+
+                <ImageView
+                    android:id="@+id/fs_blogger_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/blogger_icon" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/tr_palette5_semitrans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:id="@+id/fs_contact_link_desc"
+                    style="@style/SettingsSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tr_list_row_height2"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/list_selector_background"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/settings_contact_link" />
+
+                <ImageView
+                    android:id="@+id/fs_email_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0"
+                    android:src="@drawable/email_icon" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/tr_palette5_semitrans" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
