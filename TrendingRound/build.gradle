@@ -1,0 +1,105 @@
+// Gradle data
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+
+// Gradle plugins here
+apply plugin: 'android'
+
+// Maven dependencies repositories in here
+repositories {
+    mavenCentral()
+    maven { url 'http://dev.mobivery.com/artifactory/repo' }
+}
+
+// Needed by AA
+configurations {
+    apt
+}
+
+// Dependencies versions (the ones that usually change)
+ext.androidAnnotationsVersion = '3.0'
+ext.mobiveryLibAndroidVersion = '1.0.3-SNAPSHOT'
+ext.universalImageLoaderVersion = '1.9.0'
+
+// Insert your dependencies in here
+dependencies {
+    compile 'com.android.support:support-v4:+'
+    apt "org.androidannotations:androidannotations:${androidAnnotationsVersion}"
+    compile "org.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
+    compile "com.mobivery.android:library:${mobiveryLibAndroidVersion}@aar"
+    compile "com.nostra13.universalimageloader:universal-image-loader:${universalImageLoaderVersion}"
+}
+
+// Android compilation information
+android {
+    compileSdkVersion 19
+    buildToolsVersion "18.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+
+    signingConfigs {
+        release
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+// Parametrized signing code for CI and Builder Dash
+if (project.hasProperty('keyStore')) {
+    android.signingConfigs.release.storeFile = file(keyStore)
+}
+if (project.hasProperty('keyStorePassword')) {
+    android.signingConfigs.release.storePassword = keyStorePassword
+}
+if (project.hasProperty('keyAlias')) {
+    android.signingConfigs.release.keyAlias = keyAlias
+}
+if (project.hasProperty('keyAliasPassword')) {
+    android.signingConfigs.release.keyPassword = keyAliasPassword
+}
+
+// AndroidAnnotations processing (generation)
+def getSourceSetName(variant) {
+    return new File(variant.dirName).getName();
+}
+
+android.applicationVariants.all { variant ->
+    def aptOutputDir = project.file("build/source/apt")
+    def aptOutput = new File(aptOutputDir, variant.dirName)
+    println "****************************"
+    println "variant: ${variant.name}"
+    println "manifest:  ${variant.processResources.manifestFile}"
+    println "aptOutput:  ${aptOutput}"
+    println "****************************"
+
+    android.sourceSets[getSourceSetName(variant)].java.srcDirs += aptOutput.getPath()
+
+    variant.javaCompile.options.compilerArgs += [
+    '-processorpath', configurations.apt.getAsPath(),
+    '-processor', 'org.androidannotations.AndroidAnnotationProcessor',
+    '-AandroidManifestFile=' + variant.processResources.manifestFile,
+    '-s', aptOutput
+    ]
+
+    variant.javaCompile.source = variant.javaCompile.source.filter { p ->
+    return !p.getPath().startsWith(aptOutputDir.getPath())
+}
+
+variant.javaCompile.doFirst {
+        aptOutput.mkdirs()
+    }
+}

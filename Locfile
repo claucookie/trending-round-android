@@ -1,0 +1,11 @@
+platform :android
+
+output_path 'TrendingRound/src/main/res/'
+
+source :google_drive, 
+       :spreadsheet => 'TrendingRound', 
+       :login => ENV['GOOGLE_LOGIN'], 
+       :password => ENV['GOOGLE_PASSWORD']
+
+# If the app has [i] tags or something like that, uncomment this
+# except :keys => '[\[][i][\]]'

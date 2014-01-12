@@ -1,0 +1,5 @@
+certificate:
+  key_store: "trendinground_certificate.jks"
+  key_store_password: "e1dca8d0fb2b6bffec266a965790bff0"
+  alias: "trendinground"
+  alias_password: "e1dca8d0fb2b6bffec266a965790bff0"

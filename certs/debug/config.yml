@@ -1,0 +1,5 @@
+certificate:
+  key_store: "debug.keystore"
+  key_store_password: "android"
+  alias: "androiddebugkey"
+  alias_password: "android"

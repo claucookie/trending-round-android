@@ -1,0 +1,20 @@
+project_file_name: "TrendingRound"
+builds:
+  snapshot:
+  nightly:
+    main_target: "TrendingRound-release.apk"
+    default_version: "NIGHT"
+    icon_versions: false
+    hockeyapp:
+      app_id: ""
+      api_token: "68062c8d51604162b32dbd19ed6dc54e"
+      distribution_lists:
+        "nightly" : ["mobivery"]
+  release:
+    main_target: "TrendingRound-release.apk"
+    icon_versions: false    
+    hockeyapp:
+      app_id: ""
+      api_token: "68062c8d51604162b32dbd19ed6dc54e"
+      distribution_lists:
+        "release" : ["client"]

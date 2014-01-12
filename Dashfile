@@ -1,0 +1,16 @@
+platform :android,
+         :product_path => 'TrendingRound',
+         :product_name => 'TrendingRound-release',
+         :build_tool => :gradle
+
+target 'nightly' do
+    configuration :release
+    signing_assets :local
+    upload :hockeyapp, :app_id => '', :team_token => '68062c8d51604162b32dbd19ed6dc54e', :tags => ['mobivery']
+end
+
+target 'release' do
+    configuration :release
+    signing_assets :local
+    upload :hockeyapp, :app_id => '', :team_token => '68062c8d51604162b32dbd19ed6dc54e', :tags => ['client']
+end
