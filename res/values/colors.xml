@@ -26,6 +26,11 @@
     
 
     <color name="pressed_trendinground">#CCBFBA8F</color>
+    
+    <!-- Posts list -->
+    <color name="posts_lists_background_color">#e2d5d4</color>
+    <color name="posts_list_title_color">#666666</color>
+    <color name="posts_list_item_separator_color">#999999</color>
 
     
 </resources>

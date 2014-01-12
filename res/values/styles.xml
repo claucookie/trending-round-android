@@ -73,22 +73,19 @@
     <style name="PostsListRowText1">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@drawable/tr_palette2</item>
-        <item name="android:textSize">@dimen/tr_list_title2</item>
-        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/posts_list_title_color</item>
+        <item name="android:textSize">@dimen/tr_list_title1</item>
     </style>
 
     <style name="PostsListRowText2">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@drawable/tr_palette2</item>
-        <item name="android:textSize">@dimen/tr_list_title3</item>
-        <item name="android:singleLine">false</item>
+        <item name="android:textColor">@color/posts_list_title_color</item>
+        <item name="android:textSize">@dimen/tr_list_title2</item>
         <item name="android:maxLines">3</item>
         <item name="android:ellipsize">end</item>
-        <!-- <item name="android:background">@drawable/posts_list_row_shape</item>  -->
     </style>
 
     <style name="PostsListRowImage">
@@ -97,11 +94,9 @@
     </style>
 
     <style name="PostsListRowDate">
-        <item name="android:textColor">@drawable/tr_palette2</item>
-        <item name="android:textSize">@dimen/tr_list_title3</item>
+        <item name="android:textColor">@color/posts_list_title_color</item>
+        <item name="android:textSize">@dimen/tr_list_title2</item>
         <item name="android:singleLine">true</item>
-        <item name="android:ellipsize">start</item>
-        <item name="android:gravity">right</item>
     </style>
 
     <!-- Menu list style -->
@@ -117,7 +112,7 @@
     </style>
 
     <style name="MenuListRowText">
-        <item name="android:textSize">@dimen/tr_list_title1</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textStyle">bold</item>
@@ -129,21 +124,18 @@
     </style>
 
     <style name="PostDetailTitle">
-        <item name="android:textSize">@dimen/tr_header_title1</item>
-        <item name="android:textColor">@drawable/tr_palette2</item>
-        <item name="android:singleLine">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/posts_list_title_color</item>
+        <item name="android:textSize">@dimen/tr_list_title1</item>
     </style>
     
     <style name="PostDetailDate">
-        <item name="android:textSize">@dimen/tr_header_title2</item>
-        <item name="android:textColor">@drawable/tr_palette2</item>
+        <item name="android:textColor">@color/posts_list_title_color</item>
+        <item name="android:textSize">@dimen/tr_list_title2</item>
         <item name="android:singleLine">true</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:drawableLeft">@drawable/calendar</item>
-        <item name="android:drawablePadding">5dp</item>
     </style>
 
     <style name="PostDetailContent">

@@ -3,46 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp" >
+    android:paddingBottom="0dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp" >
 
-    <ImageView
-        android:id="@+id/fpl_row_image"
-        style="@style/PostsListRowImage"
-        android:layout_width="@dimen/tr_list_row_height"
-        android:layout_height="@dimen/tr_list_row_height"
-        android:layout_marginRight="5dp"
-        android:layout_centerVertical="true" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/posts_list_background_shape"
+        android:orientation="vertical"
+        android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/fpl_row_title"
-        style="@style/PostsListRowText1"
-        android:layout_toRightOf="@+id/fpl_row_image"
-        android:gravity="center_vertical"
-        android:padding="5dp"
-        android:text="-" />
+        <TextView
+            android:id="@+id/fpl_row_title"
+            style="@style/PostsListRowText1"
+            android:text="Bye bye sweet summer" />
 
-    <TextView
-        android:id="@+id/fpl_row_desc"
-        style="@style/PostsListRowText2"
-        android:layout_below="@+id/fpl_row_title"
-        android:layout_toRightOf="@+id/fpl_row_image"
-        android:gravity="top"
-        android:padding="5dp"
-        android:text="-" />
-    
-    <TextView
-        android:id="@+id/fpl_row_date"
-        style="@style/PostsListRowDate"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignBottom="@+id/fpl_row_image"
-        android:layout_alignLeft="@+id/fpl_row_image"
-        android:layout_alignRight="@+id/fpl_row_image"
-        android:text="29/10/2013"
-        android:gravity="center"
-        android:paddingRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/tr_palette4_semitrans" />
-    
+        <TextView
+            android:id="@+id/fpl_row_desc"
+            style="@style/PostsListRowText2"
+            android:layout_marginTop="3dp"
+            android:text="Blablabla esto es un post del blog de prueba ñañañaña ejje" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/posts_list_item_separator_color" >
+        </View>
+
+        <TextView
+            android:id="@+id/fpl_row_date"
+            style="@style/PostsListRowDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/12/2013" />
+    </LinearLayout>
 
 </RelativeLayout>

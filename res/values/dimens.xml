@@ -1,6 +1,6 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="menu_width">150pt</dimen>
+    <dimen name="menu_width">250dp</dimen>
     
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -21,8 +21,8 @@
     <dimen name="tr_header_title1">15sp</dimen>
     <dimen name="tr_header_title2">13sp</dimen>
 
-    <dimen name="tr_list_title1">15sp</dimen>
-    <dimen name="tr_list_title2">13sp</dimen>
+    <dimen name="tr_list_title1">22sp</dimen>
+    <dimen name="tr_list_title2">15sp</dimen>
     <dimen name="tr_list_title3">11sp</dimen>
 
     <dimen name="tr_content_title1">13sp</dimen>

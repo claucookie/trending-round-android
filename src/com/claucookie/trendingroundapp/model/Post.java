@@ -28,7 +28,8 @@ public class Post extends Model {
 	public static final String LINK_COLUMN = "Link";
 	public static final String TITLE_COLUMN = "Title";
 	public static final String IMAGE_COLUMN = "Image";
-	public static final String CONTENT_COLUMN = "Content";
+	public static final String DESCRIPTION_COLUMN = "Description";
+	public static final String HTMLCONTENT_COLUMN = "HtmlContent";
 	public static final String CATEGORY_COLUMN = "Categories";
 	public static final String READ_COLUMN = "Read";
 	public static final String TIMESTAMP_COLUMN = "Timestamp";
@@ -42,8 +43,11 @@ public class Post extends Model {
 	@Column(name = IMAGE_COLUMN)
 	public String image;
 
-	@Column(name = CONTENT_COLUMN)
-	public String content;
+	@Column(name = HTMLCONTENT_COLUMN)
+	public String htmlContent;
+	
+	@Column(name = DESCRIPTION_COLUMN)
+	public String description;
 
 	@Column(name = CATEGORY_COLUMN)
 	public String categories; // Categories separated by " ".
@@ -58,14 +62,15 @@ public class Post extends Model {
 		super();
 	}
 
-	public Post(String link, String title, String image, String content,
+	public Post(String link, String title, String image, String description, String htmlContent,
 			String categories, boolean isRead, String timestamp) {
 		super();
 
 		this.link = link;
 		this.title = title;
 		this.image = image;
-		this.content = content;
+		this.description = description;
+		this.htmlContent = htmlContent;
 		this.categories = categories;
 		this.isRead = isRead;
 		this.timestamp = timestamp;

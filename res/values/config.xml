@@ -8,7 +8,11 @@
     <string name="twitter_url">https://twitter.com/trending_round</string>
     <string name="blogger_url">http://trendinground.blogspot.com.es/#6da17c</string>
     
-    <string name="contact_email_sender">patricialufer86@gmail.com</string>
+    <string name="contact_email_sender">trendiground@gmail.com</string>
+    
+    <!-- <string name="date_format">1997-07-16T19:20:30.45+01:00</string>  -->
+    <string name="date_format">yyyy-MM-dd\'T\'hh:mm:ss.S</string>
+    <string name="date_format2">dd/MM/yyyy</string>
     
     
 </resources>

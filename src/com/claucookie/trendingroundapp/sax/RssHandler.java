@@ -12,6 +12,7 @@ import android.drm.DrmErrorEvent;
 import android.drm.DrmManagerClient;
 import android.drm.DrmManagerClient.OnErrorListener;
 import android.text.Html;
+import android.util.Log;
 
 import com.claucookie.trendingroundapp.model.Post;
 
@@ -51,18 +52,29 @@ public class RssHandler extends DefaultHandler {
                 currentPost.title = sbText.toString().trim();
             } else if (!isMedia && localName.equals("link")) {
                 currentPost.link = sbText.toString().trim();
-            } else if( !isMedia && localName.equals("pubDate") ){
-            	// Sat, 24 Aug 2013 12:29:23 +0000
-            	
             } else if( !isMedia && localName.equals("published") ){
-            	// 2013-10-05T11:15:00.000-07:00
-            	
+            	// Sat, 24 Aug 2013 12:29:23 +0000
+            	currentPost.timestamp = sbText.toString().trim();
             } else if (!isMedia && contentIsHtml && localName.equals("content")) {
-            	currentPost.content = sbText.toString().trim();
+            	currentPost.description = Html
+        				.fromHtml(sbText.toString().trim())
+        				.toString().trim();
+            	currentPost.htmlContent = sbText.toString().trim();
             	contentIsHtml = false;
             } else if (!isMedia && name.equals("content:encoded")) {
-            	currentPost.content = sbText.toString().trim();
+            	currentPost.htmlContent = sbText.toString().trim();
+            	currentPost.description = Html
+        				.fromHtml(sbText.toString().trim())
+        				.toString().trim();
+            	
             } else if (!isMedia && localName.equals("item") || localName.equals("entry")) {
+            	// If post image is empty we use any image found in content
+            	if( currentPost.image == null || currentPost.image.equals("")) {
+            		int urlStart = currentPost.htmlContent.indexOf("src=") + 4;
+            		int urlEnd = currentPost.htmlContent.indexOf("c", urlStart);
+            		currentPost.image = currentPost.htmlContent.substring(urlStart, urlEnd);
+            		Log.v("img", currentPost.image);
+            	}
                 posts.add(currentPost);
                 isPost = false;
                 currentPost = null;

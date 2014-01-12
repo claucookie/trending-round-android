@@ -2,6 +2,7 @@ package com.claucookie.trendingroundapp.activities;
 
 import com.android.volley.Network;
 import com.bugsense.trace.BugSenseHandler;
+import com.claucookie.trendingroundapp.R;
 import com.claucookie.trendingroundapp.util.NetworkReceiver;
 
 import de.keyboardsurfer.android.widget.crouton.Configuration;
@@ -41,7 +42,7 @@ public class BaseActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		BugSenseHandler.startSession(this);
+		BugSenseHandler.initAndStartSession(this, getString(R.string.bugsense_api_key));
 
 		// Registers BroadcastReceiver to track network connection changes.
 		IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);

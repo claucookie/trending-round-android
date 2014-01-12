@@ -1,0 +1,17 @@
+html{
+	background: #ffffff;
+	padding: 5px;
+}
+img{
+	width: 95%;
+	height: auto;
+}
+
+span{
+	max-width: 95%;
+	text-align: justify;
+}
+
+a{
+	color: #CD736A;
+}

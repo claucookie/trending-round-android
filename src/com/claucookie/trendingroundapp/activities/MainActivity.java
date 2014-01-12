@@ -116,7 +116,8 @@ public class MainActivity extends BaseActivity {
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
 		// Load default fragment
-		mContent = PostsListFragment.newInstance(WORDPRESS_URL);
+		//mContent = PostsListFragment.newInstance(WORDPRESS_URL);
+		selectItem(0);
 		setTitle(getResources().getStringArray(R.array.menu)[0]);
 		switchFragment(mContent);
 
@@ -169,7 +170,7 @@ public class MainActivity extends BaseActivity {
 		// If the nav drawer is open, hide action items related to the content
 		// view
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawer);
-		menu.findItem(R.id.action_update).setVisible(!drawerOpen);
+		//menu.findItem(R.id.action_update).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
 
@@ -181,15 +182,9 @@ public class MainActivity extends BaseActivity {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
-		// Handle action buttons
-		switch (item.getItemId()) {
-		case R.id.action_update:
-			// create intent to perform web search for this planet
-			// TODO
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
+		
+		
+		return super.onOptionsItemSelected(item);
 	}
 
 	/* The click listener for ListView in the navigation drawer */
@@ -215,16 +210,11 @@ public class MainActivity extends BaseActivity {
 
 		switch (position) {
 		case 0:
-			mContent = PostsListFragment.newInstance(WORDPRESS_URL);
-			setTitle(getResources().getStringArray(R.array.menu)[position]);
-			break;
-
-		case 1:
 			mContent = PostsListFragment.newInstance(BLOGSPOT_URL);
 			setTitle(getResources().getStringArray(R.array.menu)[position]);
 			break;
 
-		case 2:
+		case 1:
 			mContent = new SettingsFragment();
 			setTitle(getResources().getStringArray(R.array.menu)[position]);
 			break;
@@ -249,8 +239,6 @@ public class MainActivity extends BaseActivity {
 	 */
 	public void switchFragment(Fragment fragment) {
 
-		// Freeing a bit of memory
-		// System.gc();
 
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		fragmentManager.beginTransaction()
@@ -258,9 +246,6 @@ public class MainActivity extends BaseActivity {
 	}
 
 	public void switchFragmentAndAddToStack(Fragment fragment) {
-
-		// Freeing a bit of memory
-		// System.gc();
 
 		mContent = fragment;
 		getSupportFragmentManager().beginTransaction()

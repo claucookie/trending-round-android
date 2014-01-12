@@ -48,6 +48,7 @@ public class PostsListFragment extends ListFragment implements
 	private LoadingAllDBPostsTask mDbTask;
 	private SavingPostsIntoDBTask mSavePostsTask;
 	private IntentFilter mNetworkAvailableIntentFilter;
+	private boolean mRssTaskWorking = false;
 
 	public static final PostsListFragment newInstance(String urlFeed) {
 		PostsListFragment f = new PostsListFragment();
@@ -67,6 +68,7 @@ public class PostsListFragment extends ListFragment implements
 
 		// Setting adapter
 		setListAdapter(mAdapter);
+		
 
 		return inflater.inflate(R.layout.fragment_posts_list, null);
 	}
@@ -75,6 +77,9 @@ public class PostsListFragment extends ListFragment implements
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
+		// Change background window
+		getActivity().getWindow().setBackgroundDrawableResource(R.color.posts_lists_background_color);
+		
 		// Getting fragment arguments
 		mUrlFeed = getArguments().getString(EXTRA_URL);
 
@@ -151,21 +156,22 @@ public class PostsListFragment extends ListFragment implements
 	}
 
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	private void loadDataFromRSS() {
+	public void loadDataFromRSS() {
 
 		if (NetworkUtils.isNetWorkAvailable(getActivity())) {
 
 			// Loading data in background
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			if (!mRssTaskWorking)
+				try {
+					
+					mRssTask.execute(mUrlFeed);
 
-				mRssTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,
-						mUrlFeed);
-			} else {
+				} catch (Exception e) {
+					Log.e(TAG, e.getLocalizedMessage());
+				}
 
-				mRssTask.execute(mUrlFeed);
-			}
-		}else{
-			
+		} else {
+
 			((MainActivity) getActivity()).hideProgressBar();
 		}
 
@@ -197,6 +203,7 @@ public class PostsListFragment extends ListFragment implements
 		@Override
 		protected void onPreExecute() {
 
+			mRssTaskWorking = true;
 			((MainActivity) getActivity()).showProgressBar();
 		}
 
@@ -249,7 +256,14 @@ public class PostsListFragment extends ListFragment implements
 					isRefreshClicked = false;
 
 					// Canceling thread
-					// cancel(true);
+					cancel(true);
+					try {
+						finalize();
+					} catch (Throwable e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					mRssTaskWorking = false;
 				}
 
 			} catch (Exception e) {
